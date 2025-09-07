@@ -9,7 +9,7 @@
 This repository contains the **Helm chart** used to deploy the WeatherApp into Kubernetes.  
 It defines the Deployment, Service, and Ingress with AWS ALB annotations.  
 
-ArgoCD (bootstrapped via [gitops-argocd-apps](https://github.com/your-org/gitops-argocd-apps)) continuously watches this chart and applies updates automatically.
+ArgoCD (bootstrapped via [gitops-argocd](https://github.com/your-org/gitops-argocd)) continuously watches this chart and applies updates automatically.
 
 ---
 
