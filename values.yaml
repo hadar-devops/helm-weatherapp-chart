@@ -1,0 +1,23 @@
+replicaCount: 2
+
+image:
+  repository: hadar183/weatherapp-image
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    alb.ingress.kubernetes.io/load-balancer-name: weatherapp-alb
+  hosts:
+    - host: weatherapp.example.com
+      paths:
+        - path: /
+          pathType: Prefix
